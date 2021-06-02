@@ -4,10 +4,11 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: false
-}));
-
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
 
 const data = [
   {
@@ -24,7 +25,6 @@ const data = [
   },
 ];
 
-
 // GET
 
 app.get("/", (req, res) => {
@@ -36,12 +36,11 @@ app.get("/", (req, res) => {
 // Any action that requires creation of a resource. E.g: Creating a new user account, new order.
 // Can allow data to be sent along with in a form of a request body. Are a type of HTTP message that is sent by the client to the server
 
- app.post("/", function (req, res) {
-   const newData = req.body;
-   data.push(newData);
-   res.send("POST request to the homepage");
- });
+app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("POST request to the homepage");
+});
 
- app.listen(port, () => {
-   console.log("Listening in port " + port);
+app.listen(port, () => {
+  console.log("Listening in port " + port);
 });
