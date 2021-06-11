@@ -34,8 +34,7 @@ app.get("/", (req, res) => {
 
 app.get("/data", (req, res) => {
   res.status(200).send(data);
-})
-
+});
 
 // POST
 // Any action that requires creation of a resource. E.g: Creating a new user account, new order.
