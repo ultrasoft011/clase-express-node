@@ -12,5 +12,3 @@ const data = [
     name: "Pasta",
   },
 ];
-
-export default data;
