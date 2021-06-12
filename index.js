@@ -43,3 +43,8 @@ app.patch("/:id", (req, res) => {
   // res.send("Hello Node WORLD");
   res.json(data);
 });
+// PUT
+
+app.put('/', function (req, res) {
+  res.send('Information to put')
+})
