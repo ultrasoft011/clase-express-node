@@ -37,16 +37,9 @@ app.get("/data", (req, res) => {
 })
 
 
-// POST
-// Any action that requires creation of a resource. E.g: Creating a new user account, new order.
-// Can allow data to be sent along with in a form of a request body. Are a type of HTTP message that is sent by the client to the server
-
-app.post("/", (req, res) => {
-  const food = req.body;
-  data.push(food);
-  res.send("POST request to the homepage");
-});
-
-app.listen(port, () => {
-  console.log("Listening in port " + port);
+// PATCH 
+// make a partial update to a particular resource’s object
+app.patch("/:id", (req, res) => {
+  // res.send("Hello Node WORLD");
+  res.json(data);
 });
