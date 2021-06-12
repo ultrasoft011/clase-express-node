@@ -34,8 +34,15 @@ app.get("/", (req, res) => {
 
 app.get("/data", (req, res) => {
   res.status(200).send(data);
-});
+})
 
+
+// PATCH 
+// make a partial update to a particular resource’s object
+app.patch("/:id", (req, res) => {
+  // res.send("Hello Node WORLD");
+  res.json(data);
+});
 // PUT
 
 app.put('/', function (req, res) {
